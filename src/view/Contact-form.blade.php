@@ -49,7 +49,7 @@
                             <textarea name="message" class="form-control" id="message" cols="30" rows="3"></textarea>
                         </div>
                         <div class="form-group form-check">
-                            <input type="checkbox"name="save_to_db" class="form-check-input" id="exampleCheck1">
+                            <input type="radio" name="save_to_db" class="form-check-input" value="1" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">I want to save details into database!</label>
                         </div>
                         <button type="submit" class="btn btn-primary col-md-6 text-center">Submit</button>

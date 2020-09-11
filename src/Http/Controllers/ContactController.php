@@ -4,6 +4,7 @@ namespace tusharahmed\Contact\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use tusharahmed\Contact\Model\Contact;
 
 class ContactController extends Controller
 {
@@ -13,10 +14,15 @@ class ContactController extends Controller
     }
     public function store(Request $request)
     {
+
         $validate = $request->validate([
            'name' => 'required |min: 4',
-           'email' => 'required |unique:Contact',
+           'email' => 'required |email',
         ]);
-        return $request;
+        $data = $request->all();
+        if ($validate){
+            Contact::create($request->all());
+            return 'Data has gitbeen stored!';
+        }
     }
 }
